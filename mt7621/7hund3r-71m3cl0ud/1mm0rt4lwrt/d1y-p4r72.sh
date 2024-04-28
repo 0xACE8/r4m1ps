@@ -60,6 +60,8 @@ wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/mt76
 
 # add init settings
 wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/mt7621/7hund3r-71m3cl0ud/main/1mm0rt4lwrt/99-init-settings -O package/base-files/files/etc/uci-defaults/99-init-settings
+wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/mt7621/7hund3r-71m3cl0ud/main/1mm0rt4lwrt/distfeeds.conf -O openwrt/files/etc/opkg/distfeeds.conf
+wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/mt7621/7hund3r-71m3cl0ud/main/1mm0rt4lwrt/opkg.conf -O openwrt/files/etc/opkg.conf
 
 # Change to my banner
 sudo rm package/base-files/files/etc/banner
