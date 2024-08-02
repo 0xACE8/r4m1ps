@@ -72,4 +72,7 @@ wget --no-check-certificate -O package/luci-theme-argon/htdocs/luci-static/argon
 #sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i '/encryption/a\set wireless.default_radio${devidx}.key=_password_' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
+rm -rf package/lean/default-settings/files/zzz-default-settings
+wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/l3d3/zzz-default-settings -O package/lean/default-settings/files/zzz-default-settings
+
 echo "diy-part2.sh is done."
