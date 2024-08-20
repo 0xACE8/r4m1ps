@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/xwrt/xwrt
+  REPO_URL: https://github.com/x-wrt/x-wrt
   REPO_BRANCH: master
   FEEDS_CONF: mt7621/m1-r0ut3r-3g/xwrt/f33d5.c0nf.d3f4ult
   CONFIG_FILE: mt7621/m1-r0ut3r-3g/xwrt/m1-r0ut3r-3g.c0nf
