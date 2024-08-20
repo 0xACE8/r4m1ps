@@ -25,7 +25,7 @@ env:
   FEEDS_CONF: mt7621/m1-r0ut3r-3g/xwrt/f33d5.c0nf.d3f4ult
   CONFIG_FILE: mt7621/m1-r0ut3r-3g/xwrt/m1-r0ut3r-3g.c0nf
   DIY_P1_SH: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/d1y-p4r71.sh
-  DIY_P2_SH: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/d1y-p4r72.sh
+  DIY_P2_SH: mt7621/m1-r0ut3r-3g/xwrt/d1y-p4r72.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
