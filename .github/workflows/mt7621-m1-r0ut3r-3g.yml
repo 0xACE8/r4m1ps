@@ -118,7 +118,6 @@ jobs:
         OP_SSH_PW: ${{ secrets.OP_SSH_PW }}
       run: |
         sed -i 's/root:::0:99999:7:::/root:${{ secrets.OP_SSH_PW }}:0:0:99999:7:::/g' package/base-files/files/etc/shadow
-        git clone https://${{ secrets.ACCESS_TOKEN }}:x-oauth-basic@github.com/0xACE8/openwrt-data.git package/base-files/files/etc/backup        
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
