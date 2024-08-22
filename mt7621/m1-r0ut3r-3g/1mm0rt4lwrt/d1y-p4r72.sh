@@ -10,7 +10,7 @@ sed -i "s/ip6assign='60'/ip6assign='64'/g" package/base-files/files/bin/config_g
 sed -i "s/globals.ula_prefix='auto'/packet_steering='1'/g" package/base-files/files/bin/config_generate
 sed -i 's/2:-dhcp/2:-pppoe/g' package/base-files/files/lib/functions/uci-defaults.sh
 sed -i "s|DISTRIB_REVISION='%R'|DISTRIB_REVISION='R$(date +%Y.%m.%d)'|g" package/base-files/files/etc/openwrt_release
-echo "DISTRIB_SOURCECODE='openwrt'" >>package/base-files/files/etc/openwrt_release
+echo "DISTRIB_SOURCECODE='immortalwrt'" >>package/base-files/files/etc/openwrt_release
 
 # Modify Hostname
 sed -i 's/ImmortalWrt/XiaomiMI_R3G/g' package/base-files/files/bin/config_generate
@@ -68,7 +68,7 @@ wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/ar
 wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/argon/icon/ms-icon-144x144.png "https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/argone/icon/ms-icon-144x144.png"
 
 # upgrade config
-wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r45pb3rry_p1/main/3_m0d3l_b/zzz-updata-settings -O package/base-files/files/etc/uci-defaults/zzz-updata-settings
+# wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/zzz-updata-settings -O package/base-files/files/etc/uci-defaults/zzz-updata-settings
 wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r45pb3rry_p1/main/3_m0d3l_b/30-sysinfo.sh -O feeds/packages/utils/bash/files/etc/profile.d/30-sysinfo.sh
 
 echo "diy-part2.sh is done."
