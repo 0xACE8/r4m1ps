@@ -75,7 +75,6 @@ CONFIG_PACKAGE_iptables-zz-legacy=y
 CONFIG_PACKAGE_iputils-arping=y
 CONFIG_PACKAGE_jq=y
 CONFIG_PACKAGE_kmod-asn1-decoder=y
-kmod-ppp +libpthread +shellsync +kmod-mppe
 CONFIG_PACKAGE_kmod-crypto-acompress=y
 CONFIG_PACKAGE_kmod-crypto-blake2b=y
 CONFIG_PACKAGE_kmod-crypto-cbc=y
