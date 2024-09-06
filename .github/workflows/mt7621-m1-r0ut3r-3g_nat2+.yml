@@ -8,7 +8,7 @@
 # Description: Build using GitHub Actions
 #
 
-name: Build mt7621 m1-r0ut3r-3g 1mm0rt4lwrt Atcions
+name: Build mt7621 r3g nat2+ 1mm0rt4lwrt Atcions
 
 on:
   repository_dispatch:
@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/f33d5.c0nf.d3f4ult
-  CONFIG_FILE: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/m1-r0ut3r-3g_6.6.x.c0nf
+  CONFIG_FILE: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/m1-r0ut3r-3g_nat2+.c0nf
   DIY_P1_SH: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/d1y-p4r71.sh
   DIY_P2_SH: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/d1y-p4r72.sh
   UPLOAD_BIN_DIR: false
@@ -179,7 +179,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: ImmortalWrt${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: ImmortalWrt_nat2x${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: Telegram notification
@@ -188,6 +188,6 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
       run: |
-        curl -i -X GET "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage?chat_id=${{ secrets.TELEGRAM_TO }}&format=markdown&text=✅%20固件顺利编译完成!%20✅%0A目标用户:%200xACE8%0A资源仓库:%20${{ github.repository }}%0A固件名称:%20ImmortalWrt${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}"
+        curl -i -X GET "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage?chat_id=${{ secrets.TELEGRAM_TO }}&format=markdown&text=✅%20固件顺利编译完成!%20✅%0A目标用户:%200xACE8%0A资源仓库:%20${{ github.repository }}%0A固件名称:%20ImmortalWrt_nat2x${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}"
 
         
