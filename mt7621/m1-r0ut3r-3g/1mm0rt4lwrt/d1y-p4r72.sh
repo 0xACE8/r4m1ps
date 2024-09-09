@@ -68,7 +68,7 @@ wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/ar
 wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/argon/icon/ms-icon-144x144.png "https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/argone/icon/ms-icon-144x144.png"
 
 # upgrade config
-# wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/zzz-updata-settings -O package/base-files/files/etc/uci-defaults/zzz-updata-settings
+wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/zzz-updata-settings -O package/base-files/files/etc/uci-defaults/zzz-updata-settings
 wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r45pb3rry_p1/main/3_m0d3l_b/30-sysinfo.sh -O feeds/packages/utils/bash/files/etc/profile.d/30-sysinfo.sh
 sudo rm package/base-files/files/etc/banner
 wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/banner -O package/base-files/files/etc/banner
