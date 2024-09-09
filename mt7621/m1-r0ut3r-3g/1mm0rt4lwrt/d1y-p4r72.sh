@@ -46,8 +46,10 @@ sed -i 's/services/system/g' feeds/luci/applications/luci-app-ttyd/root/usr/shar
 sed -i 's/nas/services/g' feeds/luci/applications/luci-app-samba4/root/usr/share/luci/menu.d/luci-app-samba4.json
 
 # Change to my banner
-sudo rm package/emortal/default-settings/files/openwrt_banner
-wget https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/banner -O package/emortal/default-settings/files/openwrt_banner
+#sudo rm package/emortal/default-settings/files/openwrt_banner
+#wget https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/banner -O package/emortal/default-settings/files/openwrt_banner
+sudo rm package/base-files/files/etc/banner
+wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/banner -O package/base-files/files/etc/banner
 
 # Argon upgraded to Xiaomi theme
 sed -i 's/"Argon 主题设置"/"主题设置"/g' feeds/ace8/luci-app-argon-config/po/zh_Hans/argon-config.po
@@ -70,7 +72,5 @@ wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/ar
 # upgrade config
 wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/zzz-updata-settings -O package/base-files/files/etc/uci-defaults/zzz-updata-settings
 wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r45pb3rry_p1/main/3_m0d3l_b/30-sysinfo.sh -O feeds/packages/utils/bash/files/etc/profile.d/30-sysinfo.sh
-sudo rm package/base-files/files/etc/banner
-wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/banner -O package/base-files/files/etc/banner
 
 echo "diy-part2.sh is done."
