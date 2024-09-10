@@ -174,7 +174,6 @@ jobs:
         rm -rf packages
         rm -rf *kernel.bin
         rm -rf *.buildinfo
-        rm -rf *.bin
         rm -rf sha256sums
         rm -rf profiles.json
         rm -rf *.manifest        
