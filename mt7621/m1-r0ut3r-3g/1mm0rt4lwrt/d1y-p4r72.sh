@@ -21,15 +21,6 @@ sed -i 's/lang="auto"/lang="zh_cn"/g' package/emortal/default-settings/files/99-
 # Change ash to bash
 sed -i 's/ash/bash/g' package/base-files/files/etc/passwd
 
-# Modify Ntp server
-#sed -i 's/ntp.tencent.com/ntp.ntsc.ac.cn/g' package/emortal/default-settings/files/99-default-settings-chinese
-#sed -i 's/ntp1.aliyun.com/cn.ntp.org.cn/g' package/emortal/default-settings/files/99-default-settings-chinese
-#sed -i 's/ntp.tencent.com/edu.ntp.org.cn/g' package/emortal/default-settings/files/99-default-settings-chinese
-#sed -i 's/ntp.tencent.com/ntp.tuna.tsinghua.edu.cn/g' package/emortal/default-settings/files/99-default-settings-chinese
-
-# luci theme argon update
-
-
 # Boost UDP
 echo '# optimize udp' >>package/base-files/files/etc/sysctl.d/10-default.conf
 echo 'net.core.rmem_max=26214400' >>package/base-files/files/etc/sysctl.d/10-default.conf
@@ -39,11 +30,21 @@ echo 'net.core.wmem_default=26214400' >>package/base-files/files/etc/sysctl.d/10
 echo 'net.core.netdev_max_backlog=2048' >>package/base-files/files/etc/sysctl.d/10-default.conf
 
 # Change luci list name
-sed -i '65s/^#//g' feeds/packages/utils/ttyd/files/ttyd.init
+#sed -i '65s/^#//g' feeds/packages/utils/ttyd/files/ttyd.init
 sed -i '/interface}/d' feeds/packages/utils/ttyd/files/ttyd.init
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 sed -i 's/"终端"/"TTYD 终端"/g' feeds/luci/applications/luci-app-ttyd/po/zh_Hans/ttyd.po
 sed -i '4 i\\t\t"order": 1,' feeds/luci/applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json
+
+# MulteWAN
+sed -i '412d' feeds/luci/applications/luci-app-mwan3/po/zh_Hans/mwan3.po
+sed -i '412 i\msgstr "MWAN 状态"' feeds/luci/applications/luci-app-mwan3/po/zh_Hans/mwan3.po
+sed -i '414 i\msgid "MultiWAN Manager2"\nmsgstr "MWAN 管理"\n' feeds/luci/applications/luci-app-mwan3/po/zh_Hans/mwan3.po
+sed -i '415G' feeds/luci/applications/luci-app-mwan3/po/zh_Hans/mwan3.po
+sed -i '46d' feeds/luci/applications/luci-app-mwan3/root/usr/share/luci/menu.d/luci-app-mwan3.json
+sed -i '46 i\\t\t"title": "MultiWAN Manager2",' feeds/luci/applications/luci-app-mwan3/root/usr/share/luci/menu.d/luci-app-mwan3.json
+
+# samba4
 sed -i 's/nas/services/g' feeds/luci/applications/luci-app-samba4/root/usr/share/luci/menu.d/luci-app-samba4.json
 
 # Change to my banner
