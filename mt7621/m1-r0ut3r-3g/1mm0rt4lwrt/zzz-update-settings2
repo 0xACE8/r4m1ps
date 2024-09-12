@@ -5,8 +5,8 @@ uci -q batch <<-EOF
   set network.globals=globals
   set network.globals.packet_steering='2'
   set network.packet_steering=1
-  set network.wan.username='tlx1460391'
-  set network.wan.password='123456'
+  set network.wan.username='h4106226314'
+  set network.wan.password='6226314'
   set network.MODEM=interface
   set network.MODEM.proto='static'
   set network.MODEM.device='wan'
