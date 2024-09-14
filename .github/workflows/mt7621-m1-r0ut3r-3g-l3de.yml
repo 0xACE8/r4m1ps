@@ -8,7 +8,7 @@
 # Description: Build using GitHub Actions
 #
 
-name: Build mt7621 m1-r0ut3r-3g l3d3 Atcions
+name: Build mt7621 r3g l3d3 Atcions
 
 on:
   repository_dispatch:
