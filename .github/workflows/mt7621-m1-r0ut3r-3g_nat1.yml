@@ -184,7 +184,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: ImmortalWrt_net1${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: ImmortalWrt_nat1${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: Telegram notification
