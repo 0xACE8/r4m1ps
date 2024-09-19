@@ -42,8 +42,16 @@ bash /bin/genwancfg
 /etc/init.d/tailscale stop
 /etc/init.d/ddns-go stop
 
-sysupgrade -r /etc/backup/Xiaomi_R3G_us_wanx3.tar.gz
+sysupgrade -f /etc/backup/Xiaomi_R3G_us_wanx3.tar.gz
 rm -rf /etc/backup
+
+cat > /etc/opkg/distfeeds.conf <<-"EOF"
+src/gz immortalwrt_base https://downloads.immortalwrt.org/snapshots/packages/mips_24kc/base
+src/gz immortalwrt_luci https://downloads.immortalwrt.org/snapshots/packages/mips_24kc/luci
+src/gz immortalwrt_packages https://downloads.immortalwrt.org/snapshots/packages/mips_24kc/packages
+src/gz immortalwrt_routing https://downloads.immortalwrt.org/snapshots/packages/mips_24kc/routing
+src/gz immortalwrt_telephony https://downloads.immortalwrt.org/snapshots/packages/mips_24kc/telephony
+EOF
 
 uci commit system
 uci commit network
