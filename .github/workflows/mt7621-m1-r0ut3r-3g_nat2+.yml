@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/f33d5.c0nf.d3f4ult
-  CONFIG_FILE: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/m1-r0ut3r-3g_nat2+.c0nf
+  CONFIG_FILE: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/m1-r0ut3r-3g_nat1de.c0nf
   DIY_P1_SH: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/d1y-p4r71.sh
   DIY_P2_SH: mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/d1y-p4r73.sh
   UPLOAD_BIN_DIR: false
@@ -181,6 +181,11 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
+        rm -rf *kernel.bin
+        rm -rf *.buildinfo
+        rm -rf sha256sums
+        rm -rf profiles.json
+        rm -rf *.manifest
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
