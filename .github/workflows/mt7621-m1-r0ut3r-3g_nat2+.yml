@@ -120,9 +120,14 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         OP_SSH_PW: ${{ secrets.OP_SSH_PW }}
+        PPPOE_USERNAME2: ${{ secrets.PPPOE_USERNAME2 }}
+        PPPOE_PASSWORD2: ${{ secrets.PPPOE_PASSWORD2 }}
       run: |
         sed -i 's/root:::0:99999:7:::/root:${{ secrets.OP_SSH_PW }}:0:0:99999:7:::/g' package/base-files/files/etc/shadow
         sed -i "s/o.default = 'unreachable'/o.default = 'default'/g" feeds/luci/applications/luci-app-mwan3/htdocs/luci-static/resources/view/mwan3/network/policy.js
+        sed -i 's/pppoe_username/${{ secrets.PPPOE_USERNAME2 }}/g' package/base-files/files/etc/uci-defaults/zzz-updata-settings
+        sed -i 's/pppoe_password/${{ secrets.PPPOE_PASSWORD2 }}/g' package/base-files/files/etc/uci-defaults/zzz-updata-settings
+        sed -i '21,38d' package/base-files/files/etc/uci-defaults/zzz-updata-settings
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
