@@ -108,8 +108,8 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
-        sed -i '/CONFIG_PACKAGE_luci-app-upnp=y/d' openwrt/.config
-        sed -i '/CONFIG_PACKAGE_luci-i18n-upnp-zh-cn=y/d' openwrt/.config
+        # sed -i '/CONFIG_PACKAGE_luci-app-upnp=y/d' openwrt/.config
+        # sed -i '/CONFIG_PACKAGE_luci-i18n-upnp-zh-cn=y/d' openwrt/.config
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
