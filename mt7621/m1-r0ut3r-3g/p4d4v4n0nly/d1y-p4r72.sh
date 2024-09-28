@@ -51,7 +51,7 @@ sed -i 's/nas/services/g' feeds/luci/applications/luci-app-samba4/luasrc/control
 #sudo rm package/emortal/default-settings/files/openwrt_banner
 #wget https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/1mm0rt4lwrt/banner -O package/emortal/default-settings/files/openwrt_banner
 sudo rm package/base-files/files/etc/banner
-wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/r4m1ps/main/mt7621/m1-r0ut3r-3g/p4d4v4n0nly/banner -O package/base-files/files/etc/banner
+wget --no-check-certificate https://raw.githubusercontent.com/0xACE8/m3d14tek/main/mt7986/ax6k/banner -O package/base-files/files/etc/banner
 
 # Argon upgraded to Xiaomi theme
 sed -i 's/"Argon 主题设置"/"主题设置"/g' feeds/ace8/luci-app-argon-config/po/zh_Hans/argon-config.po
